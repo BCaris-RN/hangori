@@ -1,0 +1,222 @@
+[
+  {
+    "merchantName": "Stacked Buns",
+    "merchantCategory": "food",
+    "purchasedAtMs": 1764183600000,
+    "totalCents": 1497,
+    "receiptId": "SB20261126001",
+    "itemCount": 3,
+    "confidence": 0.95,
+    "source": "sample",
+    "dealId": null
+  },
+  {
+    "merchantName": "Taco Milagro",
+    "merchantCategory": "food",
+    "purchasedAtMs": 1764180000000,
+    "totalCents": 1447,
+    "receiptId": "TM20261126088",
+    "itemCount": 3,
+    "confidence": 0.95,
+    "source": "sample",
+    "dealId": null
+  },
+  {
+    "merchantName": "Golden Chopsticks",
+    "merchantCategory": "food",
+    "purchasedAtMs": 1764176400000,
+    "totalCents": 10850,
+    "receiptId": "GC20261126202",
+    "itemCount": 5,
+    "confidence": 0.95,
+    "source": "sample",
+    "dealId": null
+  },
+  {
+    "merchantName": "Stacked Buns",
+    "merchantCategory": "food",
+    "purchasedAtMs": 1764183600000,
+    "totalCents": 1497,
+    "receiptId": "SB20261126001",
+    "itemCount": 3,
+    "confidence": 0.95,
+    "source": "sample",
+    "dealId": null
+  },
+  {
+    "merchantName": null,
+    "merchantCategory": "unknown",
+    "purchasedAtMs": null,
+    "totalCents": null,
+    "receiptId": null,
+    "itemCount": 0,
+    "confidence": 0.0,
+    "source": "sample",
+    "dealId": null
+  },
+  {
+    "merchantName": "Pasta Pronto",
+    "merchantCategory": "food",
+    "purchasedAtMs": 1763924400000,
+    "totalCents": 2449,
+    "receiptId": "PP20261123044",
+    "itemCount": 3,
+    "confidence": 0.95,
+    "source": "sample",
+    "dealId": null
+  },
+  {
+    "merchantName": "Sunrise Diner",
+    "merchantCategory": "food",
+    "purchasedAtMs": 1764273600000,
+    "totalCents": 1650,
+    "receiptId": "SD20261127012",
+    "itemCount": 2,
+    "confidence": 0.95,
+    "source": "sample",
+    "dealId": null
+  },
+  {
+    "merchantName": "Bolt & Beam Hardware",
+    "merchantCategory": "other",
+    "purchasedAtMs": 1764165600000,
+    "totalCents": 3023,
+    "receiptId": "BB20261126077",
+    "itemCount": 3,
+    "confidence": 0.95,
+    "source": "sample",
+    "dealId": null
+  },
+  {
+    "merchantName": "Wok & Roll",
+    "merchantCategory": "food",
+    "purchasedAtMs": null,
+    "totalCents": 1850,
+    "receiptId": "WR20261126033",
+    "itemCount": 2,
+    "confidence": 0.72,
+    "source": "sample",
+    "dealId": null
+  },
+  {
+    "merchantName": "Burger Barn",
+    "merchantCategory": "food",
+    "purchasedAtMs": 1764169200000,
+    "totalCents": 2996,
+    "receiptId": "DD20261126555",
+    "itemCount": 3,
+    "confidence": 0.93,
+    "source": "sample",
+    "dealId": null
+  },
+  {
+    "merchantName": "Noodle Nirvana",
+    "merchantCategory": "food",
+    "purchasedAtMs": 1764162000000,
+    "totalCents": 2400,
+    "receiptId": "NN20261126091",
+    "itemCount": 3,
+    "confidence": 0.95,
+    "source": "sample",
+    "dealId": null
+  },
+  {
+    "merchantName": "Inferno Pies",
+    "merchantCategory": "food",
+    "purchasedAtMs": 1764158400000,
+    "totalCents": 2850,
+    "receiptId": "IP20261126144",
+    "itemCount": 3,
+    "confidence": 0.95,
+    "source": "sample",
+    "dealId": null
+  },
+  {
+    "merchantName": "Sakura Rolls",
+    "merchantCategory": "food",
+    "purchasedAtMs": 1764154800000,
+    "totalCents": 2150,
+    "receiptId": "SR20261126199",
+    "itemCount": 3,
+    "confidence": 0.95,
+    "source": "sample",
+    "dealId": null
+  },
+  {
+    "merchantName": "The Brunch Spot",
+    "merchantCategory": "food",
+    "purchasedAtMs": 1764151200000,
+    "totalCents": 2250,
+    "receiptId": null,
+    "itemCount": 3,
+    "confidence": 0.71,
+    "source": "sample",
+    "dealId": null
+  },
+  {
+    "merchantName": "Night Owl Coffee",
+    "merchantCategory": "food",
+    "purchasedAtMs": 1764147600000,
+    "totalCents": 925,
+    "receiptId": "GZ20261126022",
+    "itemCount": 2,
+    "confidence": 0.95,
+    "source": "sample",
+    "dealId": null
+  },
+  {
+    "merchantName": "Smoke & Ember BBQ",
+    "merchantCategory": "food",
+    "purchasedAtMs": 1764144000000,
+    "totalCents": 2700,
+    "receiptId": "SE20261126178",
+    "itemCount": 3,
+    "confidence": 0.95,
+    "source": "sample",
+    "dealId": null
+  },
+  {
+    "merchantName": "Spice Route",
+    "merchantCategory": "food",
+    "purchasedAtMs": 1764140400000,
+    "totalCents": 2600,
+    "receiptId": "SR20261126211",
+    "itemCount": 3,
+    "confidence": 0.95,
+    "source": "sample",
+    "dealId": null
+  },
+  {
+    "merchantName": "Casa Verde",
+    "merchantCategory": "food",
+    "purchasedAtMs": 1764136800000,
+    "totalCents": 2200,
+    "receiptId": "CV20261126055",
+    "itemCount": 3,
+    "confidence": 0.93,
+    "source": "sample",
+    "dealId": null
+  },
+  {
+    "merchantName": "Olive & Feta",
+    "merchantCategory": "food",
+    "purchasedAtMs": 1764133200000,
+    "totalCents": 2300,
+    "receiptId": "OF20261126130",
+    "itemCount": 3,
+    "confidence": 0.95,
+    "source": "sample",
+    "dealId": null
+  },
+  {
+    "merchantName": null,
+    "merchantCategory": "unknown",
+    "purchasedAtMs": null,
+    "totalCents": null,
+    "receiptId": null,
+    "itemCount": 0,
+    "confidence": 0.0,
+    "source": "sample",
+    "dealId": null
+  }
+]

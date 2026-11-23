@@ -12,3 +12,7 @@ inclusion: always
 - Only stop and ask me for: adding a package not in docs/speed.yml, changing
   src/contracts/, or anything that pushes, merges, or deletes.
 - Finish with one short summary: what you built, tests run, choices you made.
+- You already run in G:\hangori. Never use Set-Location or cd.
+- Run every command from the project root, one per call.
+- Use your built-in file tools to list, read, and search files, not
+  shell commands like Get-ChildItem or Get-Content.

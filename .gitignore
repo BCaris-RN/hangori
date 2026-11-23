@@ -156,3 +156,7 @@ vite.config.ts.timestamp-*
 .nx/workspace-data
 .nx/migrate-runs
 .vscode/
+test-results/
+playwright-report/
+spikes/receipts/node_modules/
+spikes/receipts/output/

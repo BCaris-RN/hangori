@@ -35,12 +35,22 @@ effective:        # computed with the rule in playbook 11.3
   R1: compromise  # full in src/domain/meals/
   R3: compromise  # plus Kiroween submission rules
 inactive: [C6, C7, R2]   # no outbound effects, single-user demo, no external review
-exceptions: []
+exceptions:
+  - packages: [serialize-javascript, glob, minimatch]
+    severity: [high, moderate, moderate]
+    dev_only: true
+    path: vite-plugin-pwa → workbox-build → @rollup/plugin-terser → serialize-javascript
+           workbox-build → glob → minimatch
+    note: >
+      No non-breaking fix available. npm audit fix cycles between the two states
+      because workbox-build pins incompatible ranges for both. Requires an upstream
+      vite-plugin-pwa release. Revisit before Dec 1, 2026.
 bypass_notes: []
 approved_packages:
   signed_by: Brandon Caris, 2026-11-22
-  runtime: [react, react-dom, zod, idb, tesseract.js]  # tesseract.js picked by the receipt spike (17/20)
+  runtime: [react, react-dom, react-router-dom, zod, idb, tesseract.js]  # react-router-dom approved by Brandon 2026-11-22; tesseract.js picked by the receipt spike (17/20)
   dev: [typescript, vite, "@vitejs/plugin-react", vite-plugin-pwa, vitest, jsdom,
         "@testing-library/react", fast-check, fake-indexeddb, "@playwright/test",
         "@axe-core/playwright", eslint, "@eslint/js", typescript-eslint,
-        eslint-plugin-react-hooks, prettier, "@types/react", "@types/react-dom"]
+        eslint-plugin-react-hooks, prettier, "@types/react", "@types/react-dom",
+        "@types/node"]

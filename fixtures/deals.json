@@ -1,0 +1,231 @@
+{
+  "fetchedAtMs": 1764000000000,
+  "restaurants": [
+    {
+      "id": "rest-stacked-buns",
+      "name": "Stacked Buns",
+      "category": "Burgers",
+      "address": "12 Griddle Lane, Lantern Hollow, LH 10001"
+    },
+    {
+      "id": "rest-taco-milagro",
+      "name": "Taco Milagro",
+      "category": "Mexican",
+      "address": "88 Salsa Street, Lantern Hollow, LH 10002"
+    },
+    {
+      "id": "rest-golden-chopsticks",
+      "name": "Golden Chopsticks",
+      "category": "Chinese",
+      "address": "5 Wok Way, Lantern Hollow, LH 10003"
+    },
+    {
+      "id": "rest-noodle-nirvana",
+      "name": "Noodle Nirvana",
+      "category": "Ramen",
+      "address": "77 Broth Boulevard, Lantern Hollow, LH 10004"
+    },
+    {
+      "id": "rest-inferno-pies",
+      "name": "Inferno Pies",
+      "category": "Pizza",
+      "address": "3 Crust Court, Lantern Hollow, LH 10005"
+    },
+    {
+      "id": "rest-spice-route",
+      "name": "Spice Route",
+      "category": "Indian",
+      "address": "21 Cardamom Close, Lantern Hollow, LH 10006"
+    },
+    {
+      "id": "rest-night-owl-coffee",
+      "name": "Night Owl Coffee",
+      "category": "Café",
+      "address": "9 Espresso Alley, Lantern Hollow, LH 10007"
+    },
+    {
+      "id": "rest-harbor-fish",
+      "name": "Harbor Fish Co.",
+      "category": "Seafood",
+      "address": "1 Pier Place, Lantern Hollow, LH 10008"
+    }
+  ],
+  "deals": [
+    {
+      "id": "deal-sb-01",
+      "restaurantId": "rest-stacked-buns",
+      "title": "Free fries with any burger",
+      "description": "Order any burger and get a regular fries on us.",
+      "code": "FREEFRY",
+      "terms": "One per customer. Dine-in and delivery. Expires Nov 30, 2026.",
+      "expiresAtMs": 1764547200000,
+      "estimatedSavingsCents": 299,
+      "linkOutUrl": "https://example.com/order/rest-stacked-buns"
+    },
+    {
+      "id": "deal-sb-02",
+      "restaurantId": "rest-stacked-buns",
+      "title": "20% off your first order",
+      "description": "New customers get 20% off their first Stacked Buns order.",
+      "code": "NEWSTACK",
+      "terms": "First-time customers only. Max discount $5. Expires Dec 31, 2026.",
+      "expiresAtMs": 1767225600000,
+      "estimatedSavingsCents": 500,
+      "linkOutUrl": "https://example.com/order/rest-stacked-buns"
+    },
+    {
+      "id": "deal-tm-01",
+      "restaurantId": "rest-taco-milagro",
+      "title": "Buy 2 tacos, get 1 free",
+      "description": "Add three tacos to your order and the cheapest one is free.",
+      "code": "TACO3",
+      "terms": "Valid on street tacos only. No substitutions. Expires Dec 15, 2026.",
+      "expiresAtMs": 1765756800000,
+      "estimatedSavingsCents": 499,
+      "linkOutUrl": "https://example.com/order/rest-taco-milagro"
+    },
+    {
+      "id": "deal-tm-02",
+      "restaurantId": "rest-taco-milagro",
+      "title": "$3 off any burrito",
+      "description": "Take $3 off any full-sized burrito.",
+      "code": null,
+      "terms": "Applies automatically at checkout. Expires Nov 28, 2026.",
+      "expiresAtMs": 1764374400000,
+      "estimatedSavingsCents": 300,
+      "linkOutUrl": "https://example.com/order/rest-taco-milagro"
+    },
+    {
+      "id": "deal-gc-01",
+      "restaurantId": "rest-golden-chopsticks",
+      "title": "Free spring rolls on orders over $40",
+      "description": "Spend $40 or more and receive a complimentary spring-roll order.",
+      "code": "SPRINGFREE",
+      "terms": "Delivery orders only. One per order. No expiry.",
+      "expiresAtMs": null,
+      "estimatedSavingsCents": 1500,
+      "linkOutUrl": "https://example.com/order/rest-golden-chopsticks"
+    },
+    {
+      "id": "deal-gc-02",
+      "restaurantId": "rest-golden-chopsticks",
+      "title": "Family feast — 10% off orders over $80",
+      "description": "10% discount automatically applied to orders of $80 or more.",
+      "code": null,
+      "terms": "Cannot be combined with other offers. Expires Dec 20, 2026.",
+      "expiresAtMs": 1766217600000,
+      "estimatedSavingsCents": null,
+      "linkOutUrl": "https://example.com/order/rest-golden-chopsticks"
+    },
+    {
+      "id": "deal-nn-01",
+      "restaurantId": "rest-noodle-nirvana",
+      "title": "Free gyoza with any ramen",
+      "description": "Order any ramen bowl and add a free gyoza (6 pcs).",
+      "code": "GYOZAFREE",
+      "terms": "Dine-in only. One per table. Expires Dec 5, 2026.",
+      "expiresAtMs": 1764892800000,
+      "estimatedSavingsCents": 750,
+      "linkOutUrl": "https://example.com/order/rest-noodle-nirvana"
+    },
+    {
+      "id": "deal-nn-02",
+      "restaurantId": "rest-noodle-nirvana",
+      "title": "Lunch special — $2 off before 2 PM",
+      "description": "Save $2 on any ramen ordered before 2:00 PM.",
+      "code": null,
+      "terms": "Valid Mon–Fri only. Dine-in and takeout. No expiry.",
+      "expiresAtMs": null,
+      "estimatedSavingsCents": 200,
+      "linkOutUrl": "https://example.com/order/rest-noodle-nirvana"
+    },
+    {
+      "id": "deal-ip-01",
+      "restaurantId": "rest-inferno-pies",
+      "title": "Medium pizza + salad combo — $5 off",
+      "description": "Order any medium pizza with a salad and save $5.",
+      "code": "PIZZASALAD",
+      "terms": "One combo per order. Dine-in and delivery. Expires Dec 10, 2026.",
+      "expiresAtMs": 1765324800000,
+      "estimatedSavingsCents": 500,
+      "linkOutUrl": "https://example.com/order/rest-inferno-pies"
+    },
+    {
+      "id": "deal-ip-02",
+      "restaurantId": "rest-inferno-pies",
+      "title": "Free craft soda with any 12-inch pizza",
+      "description": "Add a free craft soda when you order any 12-inch pizza.",
+      "code": null,
+      "terms": "Applies automatically. Delivery and dine-in. No expiry.",
+      "expiresAtMs": null,
+      "estimatedSavingsCents": 350,
+      "linkOutUrl": "https://example.com/order/rest-inferno-pies"
+    },
+    {
+      "id": "deal-sr-01",
+      "restaurantId": "rest-spice-route",
+      "title": "Free naan with any curry",
+      "description": "Order any curry and receive one garlic naan free.",
+      "code": "NAANFREE",
+      "terms": "One per person. Dine-in and delivery. Expires Dec 31, 2026.",
+      "expiresAtMs": 1767225600000,
+      "estimatedSavingsCents": 250,
+      "linkOutUrl": "https://example.com/order/rest-spice-route"
+    },
+    {
+      "id": "deal-sr-02",
+      "restaurantId": "rest-spice-route",
+      "title": "15% off on Tuesdays",
+      "description": "Every Tuesday, take 15% off your entire order.",
+      "code": null,
+      "terms": "Tuesdays only. Cannot be combined. No expiry.",
+      "expiresAtMs": null,
+      "estimatedSavingsCents": null,
+      "linkOutUrl": "https://example.com/order/rest-spice-route"
+    },
+    {
+      "id": "deal-noc-01",
+      "restaurantId": "rest-night-owl-coffee",
+      "title": "Free pastry with any large drink",
+      "description": "Order a large drink and choose a pastry from our case at no charge.",
+      "code": "PASTRYON",
+      "terms": "One per customer per visit. Dine-in only. Expires Nov 29, 2026.",
+      "expiresAtMs": 1764460800000,
+      "estimatedSavingsCents": 375,
+      "linkOutUrl": "https://example.com/order/rest-night-owl-coffee"
+    },
+    {
+      "id": "deal-noc-02",
+      "restaurantId": "rest-night-owl-coffee",
+      "title": "Happy hour — $1 off all drinks 3–5 PM",
+      "description": "Save $1 on any drink ordered between 3:00 PM and 5:00 PM.",
+      "code": null,
+      "terms": "Daily 3–5 PM. No expiry.",
+      "expiresAtMs": null,
+      "estimatedSavingsCents": 100,
+      "linkOutUrl": "https://example.com/order/rest-night-owl-coffee"
+    },
+    {
+      "id": "deal-hf-01",
+      "restaurantId": "rest-harbor-fish",
+      "title": "$4 off fish & chips on Fridays",
+      "description": "Every Friday, get $4 off the classic fish & chips plate.",
+      "code": "FISHFRI",
+      "terms": "Fridays only. Dine-in and takeout. Expires Dec 31, 2026.",
+      "expiresAtMs": 1767225600000,
+      "estimatedSavingsCents": 400,
+      "linkOutUrl": "https://example.com/order/rest-harbor-fish"
+    },
+    {
+      "id": "deal-hf-02",
+      "restaurantId": "rest-harbor-fish",
+      "title": "Free coleslaw with any plate",
+      "description": "Any main plate comes with a free coleslaw.",
+      "code": null,
+      "terms": "Applies automatically. No expiry.",
+      "expiresAtMs": null,
+      "estimatedSavingsCents": 350,
+      "linkOutUrl": "https://example.com/order/rest-harbor-fish"
+    }
+  ]
+}
