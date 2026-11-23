@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Meal rules tests",
+      "trigger": "PostFileSave",
+      "description": "After saving a file in src/domain/meals/ or tests/acceptance/, run the acceptance suite.",
+      "matcher": "src/domain/meals/|tests/acceptance/",
+      "action": {
+        "type": "command",
+        "command": "npm run test:acceptance",
+        "timeout": 120
+      }
+    }
+  ]
+}

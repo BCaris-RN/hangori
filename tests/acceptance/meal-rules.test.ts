@@ -18,6 +18,8 @@ describe('meal rules: examples', () => {
   const cases: [string, Partial<ReceiptExtraction>, MealDecision['reasonCode']][] = [
     ['missing purchase time', { purchasedAtMs: null }, 'missing_time'],
     ['confidence below threshold', { confidence: 0.799999 }, 'low_confidence'],
+    ['null merchant name with high confidence', { merchantName: null }, 'low_confidence'],
+    ['null total with high confidence', { totalCents: null }, 'low_confidence'],
     ['unknown merchant category', { merchantCategory: 'unknown' }, 'unknown_category'],
     ['non-food merchant', { merchantCategory: 'other' }, 'not_food'],
     ['future by five minutes plus 1 ms', { purchasedAtMs: NOW + 300001 }, 'future_date'],
@@ -29,6 +31,11 @@ describe('meal rules: examples', () => {
     ['exactly 48 hours old', { purchasedAtMs: NOW - 48 * HOUR }],
     ['confidence exactly 0.8', { confidence: 0.8 }],
   ] as [string, Partial<ReceiptExtraction>][])('accepts %s', (_, patch) => check(evaluate(receipt(patch)), 'counted'));
+  it.each([0, 0.5, 20])('honors a future skew of %s minutes at the exact boundary', minutes => {
+    const boundary = NOW + minutes * 60_000;
+    check(evaluate(receipt({ purchasedAtMs: boundary }), [], { maxFutureSkewMinutes: minutes }), 'counted');
+    check(evaluate(receipt({ purchasedAtMs: boundary + 1 }), [], { maxFutureSkewMinutes: minutes }), 'future_date');
+  });
   it('honors configured maximum age', () => {
     check(evaluate(receipt({ purchasedAtMs: NOW - HOUR }), [], { maxReceiptAgeHours: 1 }), 'counted');
     check(evaluate(receipt({ purchasedAtMs: NOW - HOUR - 1 }), [], { maxReceiptAgeHours: 1 }), 'too_old');
@@ -38,6 +45,7 @@ describe('meal rules: examples', () => {
     ['identical receipt', {}],
     ['merchant case and punctuation', { merchantName: 'BRUMWICKET... BUNS!!' }],
     ['receipt ID case and punctuation', { receiptId: 's.y.n 001' }],
+    ['Unicode compatibility forms and diacritics', { merchantName: 'Ｂrúmwicke\u0301t Buns ☕', receiptId: 'ŚＹＮ-００１!' }],
     ['same purchase minute', { purchasedAtMs: NOW + 59999 }],
   ] as [string, Partial<ReceiptExtraction>][])('rejects duplicate: %s', (_, patch) => {
     check(evaluate(receipt(patch), [meal(receipt())]), 'duplicate');
@@ -57,25 +65,39 @@ describe('meal rules: examples', () => {
   it('allows exactly 24h between the oldest and new meal', () => check(evaluate(receipt(), history([-24, -12, -6])), 'counted'));
   it('rejects a 24h span shorter by 1 ms', () => {
     const prior = history([-24, -12, -6]); prior[0].purchasedAtMs += 1;
-    check(evaluate(receipt(), prior), 'daily_limit');
+    const d = evaluate(receipt(), prior);
+    check(d, 'daily_limit');
+    expect(d.nextEligibleAtMs).toBe(NOW + 1);
   });
   it('checks a window containing later meals for out-of-order submissions', () => {
-    check(evaluate(receipt({ purchasedAtMs: NOW - 18 * HOUR }), history([-12, -6, 0])), 'daily_limit');
+    const d = evaluate(receipt({ purchasedAtMs: NOW - 18 * HOUR }), history([-12, -6, 0]));
+    check(d, 'daily_limit');
+    expect(d.nextEligibleAtMs).toBe(NOW + 12 * HOUR);
   });
   it.each([-1, 1])('rejects receipts too close in direction %s', direction => {
     const d = evaluate(receipt({ purchasedAtMs: NOW - 4 * HOUR + direction * (3 * HOUR - 1) }), history([-4]));
-    check(d, 'too_soon'); expect(Number.isSafeInteger(d.nextEligibleAtMs)).toBe(true);
+    check(d, 'too_soon');
+    expect(d.nextEligibleAtMs).toBe(NOW);
   });
   it.each([-1, 1])('allows exactly minimum spacing in direction %s', direction => {
     check(evaluate(receipt({ purchasedAtMs: NOW - 4 * HOUR + direction * 3 * HOUR }), history([-4])), 'counted');
   });
   it('uses configured meal limit and spacing', () => {
-    check(evaluate(receipt(), history([-4]), { maxMealsPer24h: 1 }), 'daily_limit');
-    check(evaluate(receipt(), history([-4]), { minHoursBetweenMeals: 5 }), 'too_soon');
+    const daily = evaluate(receipt(), history([-4]), { maxMealsPer24h: 1 });
+    check(daily, 'daily_limit');
+    expect(daily.nextEligibleAtMs).toBe(NOW + 20 * HOUR);
+    const spacing = evaluate(receipt(), history([-4]), { minHoursBetweenMeals: 5 });
+    check(spacing, 'too_soon');
+    expect(spacing.nextEligibleAtMs).toBe(NOW + HOUR);
   });
   it('reports the next purchase time when spacing currently blocks a meal', () => {
     const d = evaluate(receipt(), history([-1])); check(d, 'too_soon');
     expect(d.nextEligibleAtMs).toBe(NOW + 2 * HOUR);
+  });
+  it('reports a new purchase time that satisfies both limits even when too_soon wins', () => {
+    const d = evaluate(receipt(), history([-18, -12, -1]));
+    check(d, 'too_soon');
+    expect(d.nextEligibleAtMs).toBe(NOW + 6 * HOUR);
   });
   it('allows a meal without a deal when deal-only is off', () => check(evaluate(receipt(), [], { countOnlyDealMeals: false }), 'counted'));
   it('rejects a meal without a deal when deal-only is on', () => check(evaluate(receipt(), [], { countOnlyDealMeals: true }), 'no_deal'));
@@ -99,6 +121,8 @@ describe('first failing rule wins', () => {
   const cases: Case[] = [
     ['missing time before confidence/category/deal', { purchasedAtMs: null, confidence: 0, merchantCategory: 'other' }, [], { countOnlyDealMeals: true }, 'missing_time'],
     ['low confidence before category/future', { confidence: 0, merchantCategory: 'other', purchasedAtMs: NOW + HOUR }, [], {}, 'low_confidence'],
+    ['missing time before a null total', { purchasedAtMs: null, totalCents: null }, [], {}, 'missing_time'],
+    ['null merchant before category', { merchantName: null, merchantCategory: 'other' }, [], {}, 'low_confidence'],
     ['unknown category before future', { merchantCategory: 'unknown', purchasedAtMs: NOW + HOUR }, [], {}, 'unknown_category'],
     ['non-food before future', { merchantCategory: 'other', purchasedAtMs: NOW + HOUR }, [], {}, 'not_food'],
     ['future before duplicate', { purchasedAtMs: NOW + HOUR }, [meal(receipt({ purchasedAtMs: NOW + HOUR }))], {}, 'future_date'],

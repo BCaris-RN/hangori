@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0",
+  "enabled": true,
+  "name": "Demo walk",
+  "description": "Manually run the Playwright demo-walk spec.",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "npx playwright test e2e/demo-walk.spec.ts"
+  }
+}

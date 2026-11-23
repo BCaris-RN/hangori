@@ -13,7 +13,9 @@ export function receipt(patch: Partial<ReceiptExtraction> = {}): ReceiptExtracti
 }
 // Test oracle from the documented fingerprint format, not production implementation.
 export function fingerprint(r: ReceiptExtraction): string {
-  return `${r.merchantName!.toLowerCase().replace(/[^a-z0-9]/g, '')}|${Math.floor(r.purchasedAtMs! / 60_000)}|${r.totalCents}|${(r.receiptId ?? '').toUpperCase().replace(/[^A-Z0-9]/g, '')}`;
+  const merchant = r.merchantName!.normalize('NFKD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  const id = (r.receiptId ?? '').normalize('NFKD').replace(/\p{M}/gu, '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+  return `${merchant}|${Math.floor(r.purchasedAtMs! / 60_000)}|${r.totalCents}|${id}`;
 }
 export function meal(r: ReceiptExtraction, patch: Partial<CountedMeal> = {}): CountedMeal {
   return { id: r.receiptId ?? 'synthetic', fingerprint: fingerprint(r), merchantName: r.merchantName!,
@@ -31,6 +33,7 @@ export function check(d: MealDecision, code: MealDecision['reasonCode']) {
   expect(d.reasonCode).toBe(code);
   expect(d.outcome).toBe(code === 'counted' ? 'counted' : review ? 'needs_review' : 'rejected');
   expect(d.xpAwarded).toBe(code === 'counted' ? rules.xpPerMeal : 0);
+  if (code !== 'too_soon' && code !== 'daily_limit') expect(d.nextEligibleAtMs).toBeNull();
   if (code !== 'counted') {
     expect(d.reason.trim().split(/\s+/).length).toBeGreaterThan(1);
     expect(d.reason).toMatch(/[a-z]/i);

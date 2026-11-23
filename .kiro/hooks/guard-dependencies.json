@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Guard dependencies",
+      "trigger": "PreToolUse",
+      "description": "Block edits to package.json and ask Brandon to review them against docs/speed.yml.",
+      "matcher": "^(fs_write|str_replace)$",
+      "action": {
+        "type": "command",
+        "command": "node -e \" const { readFileSync } = require('node:fs'); const { posix } = require('node:path'); const event = JSON.parse(readFileSync(0, 'utf8')); const input = event.tool_input ?? event.toolInput; const target = input?.path ?? input?.file_path ?? input?.filePath; if (typeof target === 'string') { const path = posix.normalize(target.replaceAll(String.fromCharCode(92), '/')); if (posix.basename(path).toLowerCase() === 'package.json') { console.error('BLOCKED: Ask Brandon before editing package.json. Check dependency proposals against approved_packages in docs/speed.yml.'); process.exitCode = 2; } } \""
+      },
+      "timeout": 10
+    }
+  ]
+}
