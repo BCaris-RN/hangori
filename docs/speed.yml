@@ -1,0 +1,47 @@
+# docs/speed.yml: speed card (playbook v2.2, Section 11)
+playbook: Universal App Build Playbook v2.2
+project: Hangori
+profile: demo
+preset: fast
+circuit_breaker: 3
+company_floors: {}
+overrides:
+  P1: full        # the full brief is already written
+  P3: full        # full specs, since Kiro works from them
+  B5: full        # fresh session per spec
+area_overrides:
+  src/domain/meals/:
+    B1: full      # Codex writes acceptance tests from requirements.md before Kiro builds
+    C4: full      # property-based tests for every meal rule
+    C5: full      # replayed and double-tapped submissions for every rule
+    R1: full      # Brandon reviews every change here
+effective:        # computed with the rule in playbook 11.3
+  P1: full
+  P2: full
+  P3: full
+  P4: compromise  # floor: specs in flight depend on the contracts
+  B1: compromise  # full in src/domain/meals/
+  B2: compromise
+  B3: compromise
+  B4: compromise  # approved list below
+  B5: full
+  C1: compromise  # demo walk on every merge; the rest nightly and before release
+  C2: compromise
+  C3: compromise
+  C4: compromise  # full in src/domain/meals/
+  C5: compromise  # full in src/domain/meals/
+  C8: compromise
+  C9: compromise  # small golden set of synthetic receipts
+  R1: compromise  # full in src/domain/meals/
+  R3: compromise  # plus Kiroween submission rules
+inactive: [C6, C7, R2]   # no outbound effects, single-user demo, no external review
+exceptions: []
+bypass_notes: []
+approved_packages:
+  signed_by: null  # Brandon: add your name and the date to approve this list
+  runtime: [react, react-dom, zod, idb]
+  dev: [typescript, vite, "@vitejs/plugin-react", vite-plugin-pwa, vitest, jsdom,
+        "@testing-library/react", fast-check, fake-indexeddb, "@playwright/test",
+        "@axe-core/playwright", eslint, "@eslint/js", typescript-eslint,
+        eslint-plugin-react-hooks, prettier, "@types/react", "@types/react-dom"]
+  after_spike: [tesseract.js, "@aws-sdk/client-textract"]  # only the extractor the spike picks
