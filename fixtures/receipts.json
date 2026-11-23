@@ -1,6 +1,6 @@
 [
   {
-    "merchantName": "Stacked Buns",
+    "merchantName": "Brumwicket Buns",
     "merchantCategory": "food",
     "purchasedAtMs": 1764183600000,
     "totalCents": 1497,
@@ -11,7 +11,7 @@
     "dealId": null
   },
   {
-    "merchantName": "Taco Milagro",
+    "merchantName": "Tavvlethorn Tacos",
     "merchantCategory": "food",
     "purchasedAtMs": 1764180000000,
     "totalCents": 1447,
@@ -22,7 +22,7 @@
     "dealId": null
   },
   {
-    "merchantName": "Golden Chopsticks",
+    "merchantName": "Zindlewick Chopsticks",
     "merchantCategory": "food",
     "purchasedAtMs": 1764176400000,
     "totalCents": 10850,
@@ -33,7 +33,7 @@
     "dealId": null
   },
   {
-    "merchantName": "Stacked Buns",
+    "merchantName": "Brumwicket Buns",
     "merchantCategory": "food",
     "purchasedAtMs": 1764183600000,
     "totalCents": 1497,
@@ -55,7 +55,7 @@
     "dealId": null
   },
   {
-    "merchantName": "Pasta Pronto",
+    "merchantName": "Pellumquill Pasta",
     "merchantCategory": "food",
     "purchasedAtMs": 1763924400000,
     "totalCents": 2449,
@@ -66,7 +66,7 @@
     "dealId": null
   },
   {
-    "merchantName": "Sunrise Diner",
+    "merchantName": "Dawnquibble Diner",
     "merchantCategory": "food",
     "purchasedAtMs": 1764273600000,
     "totalCents": 1650,
@@ -77,7 +77,7 @@
     "dealId": null
   },
   {
-    "merchantName": "Bolt & Beam Hardware",
+    "merchantName": "Brassquibble Hardware",
     "merchantCategory": "other",
     "purchasedAtMs": 1764165600000,
     "totalCents": 3023,
@@ -88,7 +88,7 @@
     "dealId": null
   },
   {
-    "merchantName": "Wok & Roll",
+    "merchantName": "Wumplewick Wok",
     "merchantCategory": "food",
     "purchasedAtMs": null,
     "totalCents": 1850,
@@ -99,7 +99,7 @@
     "dealId": null
   },
   {
-    "merchantName": "Burger Barn",
+    "merchantName": "Bramblevex Burgers",
     "merchantCategory": "food",
     "purchasedAtMs": 1764169200000,
     "totalCents": 2996,
@@ -110,7 +110,7 @@
     "dealId": null
   },
   {
-    "merchantName": "Noodle Nirvana",
+    "merchantName": "Nimblequern Noodles",
     "merchantCategory": "food",
     "purchasedAtMs": 1764162000000,
     "totalCents": 2400,
@@ -121,7 +121,7 @@
     "dealId": null
   },
   {
-    "merchantName": "Inferno Pies",
+    "merchantName": "Cindervibble Pies",
     "merchantCategory": "food",
     "purchasedAtMs": 1764158400000,
     "totalCents": 2850,
@@ -132,7 +132,7 @@
     "dealId": null
   },
   {
-    "merchantName": "Sakura Rolls",
+    "merchantName": "Petalquern Rolls",
     "merchantCategory": "food",
     "purchasedAtMs": 1764154800000,
     "totalCents": 2150,
@@ -143,7 +143,7 @@
     "dealId": null
   },
   {
-    "merchantName": "The Brunch Spot",
+    "merchantName": "Brunchwizzle Hollow",
     "merchantCategory": "food",
     "purchasedAtMs": 1764151200000,
     "totalCents": 2250,
@@ -154,7 +154,7 @@
     "dealId": null
   },
   {
-    "merchantName": "Night Owl Coffee",
+    "merchantName": "Owlvibble Coffee",
     "merchantCategory": "food",
     "purchasedAtMs": 1764147600000,
     "totalCents": 925,
@@ -165,7 +165,7 @@
     "dealId": null
   },
   {
-    "merchantName": "Smoke & Ember BBQ",
+    "merchantName": "Emberquern BBQ",
     "merchantCategory": "food",
     "purchasedAtMs": 1764144000000,
     "totalCents": 2700,
@@ -176,7 +176,7 @@
     "dealId": null
   },
   {
-    "merchantName": "Spice Route",
+    "merchantName": "Spindlequern Spice",
     "merchantCategory": "food",
     "purchasedAtMs": 1764140400000,
     "totalCents": 2600,
@@ -187,7 +187,7 @@
     "dealId": null
   },
   {
-    "merchantName": "Casa Verde",
+    "merchantName": "Verdavibble Kitchen",
     "merchantCategory": "food",
     "purchasedAtMs": 1764136800000,
     "totalCents": 2200,
@@ -198,7 +198,7 @@
     "dealId": null
   },
   {
-    "merchantName": "Olive & Feta",
+    "merchantName": "Olivequibble Table",
     "merchantCategory": "food",
     "purchasedAtMs": 1764133200000,
     "totalCents": 2300,

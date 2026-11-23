@@ -54,7 +54,7 @@ AWS Textract: skipped (no `AWS_ACCESS_KEY_ID` in environment)
 
 | Field | Expected | Extracted | Match |
 |---|---|---|---|
-| Merchant | `Stacked Buns` | `STACKED mung` | ✗ |
+| Merchant | `Brumwicket Buns` | `STACKED mung` | ✗ |
 | Date/Time | `Nov 26, 2026, 6:00 PM` | `(none)` | ✗ |
 | Total | `14.97` | `(none)` | ✗ |
 | Receipt ID | `SB20261126001` | `(none)` | ✗ |
@@ -77,7 +77,7 @@ Total en
 
 | Field | Expected | Extracted | Match |
 |---|---|---|---|
-| Merchant | `The Brunch Spot` | `THE BRUNCH SPOT` | ✓ |
+| Merchant | `Brunchwizzle Hollow` | `BRUNCHWIZZLE HOLLOW` | ✓ |
 | Date/Time | `Nov 26, 2026, 10:00 AM` | `Nov 26, 2026` | ✗ |
 | Total | `22.5` | `22.5` | ✓ |
 | Receipt ID | `BS20261126066` | `(none)` | ✗ |
@@ -85,7 +85,7 @@ Total en
 <details><summary>Raw OCR text</summary>
 
 ```
-THE BRUNCH SPOT
+BRUNCHWIZZLE HOLLOW
 Nov 26, 2026, 10:0¢ AM
 Eggs Benedict $13.00
 Fresh og $5.00
@@ -100,7 +100,7 @@ Total $22.50
 
 | Field | Expected | Extracted | Match |
 |---|---|---|---|
-| Merchant | `Harbor Fish Co.` | `RARBOR Fis co` | ✗ |
+| Merchant | `Harborquern Fish` | `RARBOR Fis co` | ✗ |
 | Date/Time | `Nov 26, 2026, 4:00 AM` | `(none)` | ✗ |
 | Total | `21.49` | `(none)` | ✗ |
 | Receipt ID | `HF20261126088` | `(none)` | ✗ |
