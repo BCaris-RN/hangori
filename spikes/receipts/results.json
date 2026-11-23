@@ -1,0 +1,502 @@
+[
+  {
+    "id": "R001",
+    "label": "normal-burger",
+    "elapsedMs": 307,
+    "groundTruth": {
+      "merchant": "Stacked Buns",
+      "purchaseTime": "Nov 26, 2026, 6:00 PM",
+      "total": 14.97,
+      "receiptId": "SB20261126001"
+    },
+    "extracted": {
+      "merchant": "STACKED BUNS",
+      "purchaseTime": "Nov 26, 2026 6:00 PM",
+      "total": 14.97,
+      "receiptId": "SB20261126001"
+    },
+    "score": {
+      "merchant": true,
+      "purchaseTime": true,
+      "total": true,
+      "receiptId": true
+    },
+    "allCorrect": true,
+    "rawText": "STACKED BUNS\nNov 26, 2026, 6:00 PM\nReceipt # SB20261126001\n\nDouble Stack Burger $9.49\nFries $2.99\nLemonade $2.49\nTotal $14.97\n\nThank you for dining with us!"
+  },
+  {
+    "id": "R002",
+    "label": "normal-taco",
+    "elapsedMs": 243,
+    "groundTruth": {
+      "merchant": "Taco Milagro",
+      "purchaseTime": "Nov 26, 2026, 5:00 PM",
+      "total": 14.47,
+      "receiptId": "TM20261126088"
+    },
+    "extracted": {
+      "merchant": "TACO MILAGRO",
+      "purchaseTime": "Nov 26, 2026 5:00 PM",
+      "total": 14.47,
+      "receiptId": "TM20261126088"
+    },
+    "score": {
+      "merchant": true,
+      "purchaseTime": true,
+      "total": true,
+      "receiptId": true
+    },
+    "allCorrect": true,
+    "rawText": "TACO MILAGRO\nNov 26, 2026, 5:00 PM\nReceipt # TM20261126088\nFish Taco $4.99\nStreet Taco x2 $5.98\nHorchata $3.50\nTotal $14.47\nThank you for dining with us!"
+  },
+  {
+    "id": "R003",
+    "label": "family-order",
+    "elapsedMs": 345,
+    "groundTruth": {
+      "merchant": "Golden Chopsticks",
+      "purchaseTime": "Nov 26, 2026, 4:00 PM",
+      "total": 108.5,
+      "receiptId": "GC20261126202"
+    },
+    "extracted": {
+      "merchant": "GOLDEN CHOPSTICKS",
+      "purchaseTime": "Nov 26, 2026 4:00 PM",
+      "total": 108.5,
+      "receiptId": "GC20261126202"
+    },
+    "score": {
+      "merchant": true,
+      "purchaseTime": true,
+      "total": true,
+      "receiptId": true
+    },
+    "allCorrect": true,
+    "rawText": "GOLDEN CHOPSTICKS\n\nNov 26, 2026, 4:00 PM\n\nReceipt # GC20261126202\nPeking Duck (whole) $48.00\nKung Pao Chicken $18.50\nFried Rice x2 $19.00\nSpring Rolls x6 $15.00\nTea x4 $8.00\nTotal $108.50\n\nThank you for dining with us!"
+  },
+  {
+    "id": "R004",
+    "label": "exact-duplicate",
+    "elapsedMs": 242,
+    "groundTruth": {
+      "merchant": "Stacked Buns",
+      "purchaseTime": "Nov 26, 2026, 6:00 PM",
+      "total": 14.97,
+      "receiptId": "SB20261126001"
+    },
+    "extracted": {
+      "merchant": "STACKED BUNS",
+      "purchaseTime": "Nov 26, 2026 6:00 PM",
+      "total": 14.97,
+      "receiptId": "SB20261126001"
+    },
+    "score": {
+      "merchant": true,
+      "purchaseTime": true,
+      "total": true,
+      "receiptId": true
+    },
+    "allCorrect": true,
+    "rawText": "STACKED BUNS\nNov 26, 2026, 6:00 PM\nReceipt # SB20261126001\n\nDouble Stack Burger $9.49\nFries $2.99\nLemonade $2.49\nTotal $14.97\n\nThank you for dining with us!"
+  },
+  {
+    "id": "R005",
+    "label": "rephotographed-duplicate",
+    "elapsedMs": 304,
+    "groundTruth": {
+      "merchant": "Stacked Buns",
+      "purchaseTime": "Nov 26, 2026, 6:00 PM",
+      "total": 14.97,
+      "receiptId": "SB20261126001"
+    },
+    "extracted": {
+      "merchant": "STACKED mung",
+      "purchaseTime": null,
+      "total": null,
+      "receiptId": null
+    },
+    "score": {
+      "merchant": false,
+      "purchaseTime": false,
+      "total": false,
+      "receiptId": false
+    },
+    "allCorrect": false,
+    "rawText": "STACKED mung\nLad “mo-\n———— - -\nBobie Sach Burger \"oe\nPrine a.m\nom nas \"an\nTotal en"
+  },
+  {
+    "id": "R006",
+    "label": "three-days-old",
+    "elapsedMs": 257,
+    "groundTruth": {
+      "merchant": "Pasta Pronto",
+      "purchaseTime": "Nov 23, 2026, 7:00 PM",
+      "total": 24.49,
+      "receiptId": "PP20261123044"
+    },
+    "extracted": {
+      "merchant": "PASTA PRONTO",
+      "purchaseTime": "Nov 23, 2026 7:00 PM",
+      "total": 24.49,
+      "receiptId": "PP20261123044"
+    },
+    "score": {
+      "merchant": true,
+      "purchaseTime": true,
+      "total": true,
+      "receiptId": true
+    },
+    "allCorrect": true,
+    "rawText": "PASTA PRONTO\nNov 23, 2026, 7:00 PM\nReceipt # PP20261123044\nSpaghetti Bolognese $13.99\nGarlic Bread $3.50\nHouse Wine $7.00\nTotal $24.49\nThank you for dining with us!"
+  },
+  {
+    "id": "R007",
+    "label": "future-receipt",
+    "elapsedMs": 221,
+    "groundTruth": {
+      "merchant": "Sunrise Diner",
+      "purchaseTime": "Nov 27, 2026, 7:00 PM",
+      "total": 16.5,
+      "receiptId": "SD20261127012"
+    },
+    "extracted": {
+      "merchant": "SUNRISE DINER",
+      "purchaseTime": "Nov 27, 2026 7:00 PM",
+      "total": 16.5,
+      "receiptId": "SD20261127012"
+    },
+    "score": {
+      "merchant": true,
+      "purchaseTime": true,
+      "total": true,
+      "receiptId": true
+    },
+    "allCorrect": true,
+    "rawText": "SUNRISE DINER\nNov 27, 2026, 7:00 PM\nReceipt # SD20261127012\nAvocado Toast $11.00\nCold Brew $5.50\nTotal $16.50\nThank you for dining with us!"
+  },
+  {
+    "id": "R008",
+    "label": "non-food-hardware",
+    "elapsedMs": 289,
+    "groundTruth": {
+      "merchant": "Bolt & Beam Hardware",
+      "purchaseTime": "Nov 26, 2026, 2:00 PM",
+      "total": 30.23,
+      "receiptId": "BB20261126077"
+    },
+    "extracted": {
+      "merchant": "BOLT & BEAM HARDWARE",
+      "purchaseTime": "Nov 26, 2026 2:00 PM",
+      "total": 30.23,
+      "receiptId": "BB20261126077"
+    },
+    "score": {
+      "merchant": true,
+      "purchaseTime": true,
+      "total": true,
+      "receiptId": true
+    },
+    "allCorrect": true,
+    "rawText": "BOLT & BEAM HARDWARE\nNov 26, 2026, 2:00 PM\nReceipt # BB20261126077\nWood Screws 3in x50 $8.99\nPaint Roller Kit $14.49\nSandpaper Asst. $6.75\nTotal $30.23\nThank you for dining with us!"
+  },
+  {
+    "id": "R009",
+    "label": "no-time",
+    "elapsedMs": 220,
+    "groundTruth": {
+      "merchant": "Wok & Roll",
+      "purchaseTime": "Nov 26, 2026",
+      "total": 18.5,
+      "receiptId": "WR20261126033"
+    },
+    "extracted": {
+      "merchant": "WOK & ROLL",
+      "purchaseTime": "Nov 26, 2026",
+      "total": 18.5,
+      "receiptId": "WR20261126033"
+    },
+    "score": {
+      "merchant": true,
+      "purchaseTime": true,
+      "total": true,
+      "receiptId": true
+    },
+    "allCorrect": true,
+    "rawText": "WOK & ROLL\nNov 26, 2026\nReceipt # WR20261126033\nGeneral Tso's Chicken $13.50\nEgg Fried Rice $5.00\nTotal $18.50\nThank you for dining with us!"
+  },
+  {
+    "id": "R010",
+    "label": "delivery-app-style",
+    "elapsedMs": 386,
+    "groundTruth": {
+      "merchant": "Burger Barn",
+      "purchaseTime": "Nov 26, 2026, 3:00 PM",
+      "total": 29.96,
+      "receiptId": "DD20261126555"
+    },
+    "extracted": {
+      "merchant": "BURGER BARN",
+      "purchaseTime": "Nov 26, 2026 3:00 PM",
+      "total": 29.96,
+      "receiptId": "DD20261126555"
+    },
+    "score": {
+      "merchant": true,
+      "purchaseTime": true,
+      "total": true,
+      "receiptId": true
+    },
+    "allCorrect": true,
+    "rawText": "BURGER BARN\nOrder via DashDrop\nNov 26, 2026, 3:00 PM\n\nReceipt # DD20261126555\nClassic Smash Burger $11.99\nOnion Rings $4.49\nChocolate Shake $5.99\nSubtotal $22.47\nDelivery fee $2.99\nService fee $1.50\nTip $3.00\nTotal $29.96\n\nThank you for dining with us!"
+  },
+  {
+    "id": "R011",
+    "label": "normal-ramen",
+    "elapsedMs": 247,
+    "groundTruth": {
+      "merchant": "Noodle Nirvana",
+      "purchaseTime": "Nov 26, 2026, 1:00 PM",
+      "total": 24,
+      "receiptId": "NN20261126091"
+    },
+    "extracted": {
+      "merchant": "NOODLE NIRVANA",
+      "purchaseTime": "Nov 26, 2026 1:00 PM",
+      "total": 24,
+      "receiptId": "NN20261126091"
+    },
+    "score": {
+      "merchant": true,
+      "purchaseTime": true,
+      "total": true,
+      "receiptId": true
+    },
+    "allCorrect": true,
+    "rawText": "NOODLE NIRVANA\n\nNov 26, 2026, 1:00 PM\n\nReceipt # NN20261126091\nTonkotsu Ramen $14.00\nGyoza x6 $7.50\nGreen Tea $2.50\nTotal $24.00\n\nThank you for dining with us!"
+  },
+  {
+    "id": "R012",
+    "label": "normal-pizza",
+    "elapsedMs": 251,
+    "groundTruth": {
+      "merchant": "Inferno Pies",
+      "purchaseTime": "Nov 26, 2026, 12:00 PM",
+      "total": 28.5,
+      "receiptId": "IP20261126144"
+    },
+    "extracted": {
+      "merchant": "INFERNO PIES",
+      "purchaseTime": "Nov 26, 2026 12:00 PM",
+      "total": 28.5,
+      "receiptId": "IP20261126144"
+    },
+    "score": {
+      "merchant": true,
+      "purchaseTime": true,
+      "total": true,
+      "receiptId": true
+    },
+    "allCorrect": true,
+    "rawText": "INFERNO PIES\nNov 26, 2026, 12:00 PM\nReceipt # IP20261126144\nMargherita 12in $16.00\nCaesar Salad $9.00\nCraft Soda $3.50\nTotal $28.50\nThank you for dining with us!"
+  },
+  {
+    "id": "R013",
+    "label": "normal-sushi",
+    "elapsedMs": 238,
+    "groundTruth": {
+      "merchant": "Sakura Rolls",
+      "purchaseTime": "Nov 26, 2026, 11:00 AM",
+      "total": 21.5,
+      "receiptId": "SR20261126199"
+    },
+    "extracted": {
+      "merchant": "SAKURA ROLLS",
+      "purchaseTime": "Nov 26, 2026 11:00 AM",
+      "total": 21.5,
+      "receiptId": "SR20261126199"
+    },
+    "score": {
+      "merchant": true,
+      "purchaseTime": true,
+      "total": true,
+      "receiptId": true
+    },
+    "allCorrect": true,
+    "rawText": "SAKURA ROLLS\nNov 26, 2026, 11:00 AM\nReceipt # SR20261126199\nDragon Roll $14.50\nEdamame $4.00\nMiso Soup $3.00\nTotal $21.50\nThank you for dining with us!"
+  },
+  {
+    "id": "R014",
+    "label": "tilted-receipt",
+    "elapsedMs": 333,
+    "groundTruth": {
+      "merchant": "The Brunch Spot",
+      "purchaseTime": "Nov 26, 2026, 10:00 AM",
+      "total": 22.5,
+      "receiptId": "BS20261126066"
+    },
+    "extracted": {
+      "merchant": "THE BRUNCH SPOT",
+      "purchaseTime": "Nov 26, 2026",
+      "total": 22.5,
+      "receiptId": null
+    },
+    "score": {
+      "merchant": true,
+      "purchaseTime": false,
+      "total": true,
+      "receiptId": false
+    },
+    "allCorrect": false,
+    "rawText": "THE BRUNCH SPOT\nNov 26, 2026, 10:0¢ AM\nEggs Benedict $13.00\nFresh og $5.00\nLatte $4.50\n-— __\nTotal $22.50"
+  },
+  {
+    "id": "R015",
+    "label": "coffee-low-total",
+    "elapsedMs": 228,
+    "groundTruth": {
+      "merchant": "Grounds Zero",
+      "purchaseTime": "Nov 26, 2026, 9:00 AM",
+      "total": 9.25,
+      "receiptId": "GZ20261126022"
+    },
+    "extracted": {
+      "merchant": "GROUNDS ZERO",
+      "purchaseTime": "Nov 26, 2026 9:00 AM",
+      "total": 9.25,
+      "receiptId": "GZ20261126022"
+    },
+    "score": {
+      "merchant": true,
+      "purchaseTime": true,
+      "total": true,
+      "receiptId": true
+    },
+    "allCorrect": true,
+    "rawText": "GROUNDS ZERO\nNov 26, 2026, 9:00 AM\nReceipt # Gz20261126022\nOat Milk Latte $5.50\nAlmond Croissant $3.75\nTotal $9.25\nThank you for dining with us!"
+  },
+  {
+    "id": "R016",
+    "label": "normal-bbq",
+    "elapsedMs": 253,
+    "groundTruth": {
+      "merchant": "Smoke & Ember BBQ",
+      "purchaseTime": "Nov 26, 2026, 8:00 AM",
+      "total": 27,
+      "receiptId": "SE20261126178"
+    },
+    "extracted": {
+      "merchant": "SMOKE & EMBER BBQ",
+      "purchaseTime": "Nov 26, 2026 8:00 AM",
+      "total": 27,
+      "receiptId": "SE20261126178"
+    },
+    "score": {
+      "merchant": true,
+      "purchaseTime": true,
+      "total": true,
+      "receiptId": true
+    },
+    "allCorrect": true,
+    "rawText": "SMOKE & EMBER BBQ\n\nNov 26, 2026, 8:00 AM\n\nReceipt # SE20261126178\nBrisket Plate $19.00\nCornbread x2 $5.00\nSweet Tea $3.00\nTotal $27.00\n\nThank you for dining with us!"
+  },
+  {
+    "id": "R017",
+    "label": "normal-indian",
+    "elapsedMs": 262,
+    "groundTruth": {
+      "merchant": "Spice Route",
+      "purchaseTime": "Nov 26, 2026, 7:00 AM",
+      "total": 26,
+      "receiptId": "SR20261126211"
+    },
+    "extracted": {
+      "merchant": "SPICE ROUTE",
+      "purchaseTime": "Nov 26, 2026 7:00 AM",
+      "total": 26,
+      "receiptId": "SR20261126211"
+    },
+    "score": {
+      "merchant": true,
+      "purchaseTime": true,
+      "total": true,
+      "receiptId": true
+    },
+    "allCorrect": true,
+    "rawText": "SPICE ROUTE\n\nNov 26, 2026, 7:00 AM\n\nReceipt # SR20261126211\nChicken Tikka Masala $16.50\nGarlic Naan x2 $5.00\nMango Lassi $4.50\nTotal $26.00\n\nThank you for dining with us!"
+  },
+  {
+    "id": "R018",
+    "label": "normal-mexican",
+    "elapsedMs": 250,
+    "groundTruth": {
+      "merchant": "Casa Verde",
+      "purchaseTime": "Nov 26, 2026, 6:00 AM",
+      "total": 22,
+      "receiptId": "CV20261126055"
+    },
+    "extracted": {
+      "merchant": "CASA VERDE",
+      "purchaseTime": "Nov 26, 2026 6:00 AM",
+      "total": 22,
+      "receiptId": "CVV20261126055"
+    },
+    "score": {
+      "merchant": true,
+      "purchaseTime": true,
+      "total": true,
+      "receiptId": true
+    },
+    "allCorrect": true,
+    "rawText": "CASA VERDE\nNov 26, 2026, 6:00 AM\nReceipt # CvV20261126055\nChicken Burrito $12.50\nChips & Guac $6.00\nAgua Fresca $3.50\nTotal $22.00\nThank you for dining with us!"
+  },
+  {
+    "id": "R019",
+    "label": "normal-greek",
+    "elapsedMs": 249,
+    "groundTruth": {
+      "merchant": "Olive & Feta",
+      "purchaseTime": "Nov 26, 2026, 5:00 AM",
+      "total": 23,
+      "receiptId": "OF20261126130"
+    },
+    "extracted": {
+      "merchant": "OLIVE & FETA",
+      "purchaseTime": "Nov 26, 2026 5:00 AM",
+      "total": 23,
+      "receiptId": "OF20261126130"
+    },
+    "score": {
+      "merchant": true,
+      "purchaseTime": true,
+      "total": true,
+      "receiptId": true
+    },
+    "allCorrect": true,
+    "rawText": "OLIVE & FETA\nNov 26, 2026, 5:00 AM\nReceipt # OF20261126130\n\nLamb Gyro $11.00\nGreek Salad $9.50\nSparkling Water $2.50\nTotal $23.00\n\nThank you for dining with us!"
+  },
+  {
+    "id": "R020",
+    "label": "blurry-photo",
+    "elapsedMs": 362,
+    "groundTruth": {
+      "merchant": "Harbor Fish Co.",
+      "purchaseTime": "Nov 26, 2026, 4:00 AM",
+      "total": 21.49,
+      "receiptId": "HF20261126088"
+    },
+    "extracted": {
+      "merchant": "RARBOR Fis co",
+      "purchaseTime": null,
+      "total": null,
+      "receiptId": null
+    },
+    "score": {
+      "merchant": false,
+      "purchaseTime": false,
+      "total": false,
+      "receiptId": false
+    },
+    "allCorrect": false,
+    "rawText": "RARBOR Fis co\nBese LEE\nLas JUN —\"\n\ntims Bege\n\na r——\n\n——— --\n\n— -\nT— S—"
+  }
+]

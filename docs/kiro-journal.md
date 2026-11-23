@@ -1,1 +1,2 @@
 2026-11-22 · Run 0.2 · Steering · Kiro created product.md, tech.md, structure.md from the brief and rules; meal rules kept only in hangori-rules.md.
+2026-11-22 · Run 0.3 · Spike · tesseract.js on-device: 17/20 all fields, 274 ms per receipt. R014 tilt misread → add deskew in receipt-capture.
