@@ -38,10 +38,9 @@ inactive: [C6, C7, R2]   # no outbound effects, single-user demo, no external re
 exceptions: []
 bypass_notes: []
 approved_packages:
-  signed_by: null  # Brandon: add your name and the date to approve this list
-  runtime: [react, react-dom, zod, idb]
+  signed_by: Brandon Caris, 2026-11-22
+  runtime: [react, react-dom, zod, idb, tesseract.js]  # tesseract.js picked by the receipt spike (17/20)
   dev: [typescript, vite, "@vitejs/plugin-react", vite-plugin-pwa, vitest, jsdom,
         "@testing-library/react", fast-check, fake-indexeddb, "@playwright/test",
         "@axe-core/playwright", eslint, "@eslint/js", typescript-eslint,
         eslint-plugin-react-hooks, prettier, "@types/react", "@types/react-dom"]
-  after_spike: [tesseract.js, "@aws-sdk/client-textract"]  # only the extractor the spike picks
