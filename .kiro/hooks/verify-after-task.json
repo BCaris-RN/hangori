@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Verify after task",
+      "trigger": "PostTaskExec",
+      "description": "After any spec task finishes, run npm run verify and report failures back to the agent.",
+      "action": {
+        "type": "command",
+        "command": "npm run verify 2>&1",
+        "timeout": 120
+      }
+    }
+  ]
+}
