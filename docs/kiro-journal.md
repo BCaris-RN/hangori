@@ -1,0 +1,1 @@
+2026-11-22 · Run 0.2 · Steering · Kiro created product.md, tech.md, structure.md from the brief and rules; meal rules kept only in hangori-rules.md.
