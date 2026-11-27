@@ -15,7 +15,7 @@ export default defineConfig({
     environment: "jsdom",
     globals: true,
     include: ["src/**/*.test.ts?(x)", "tests/**/*.test.ts"],
-    // TODO: remove passWithNoTests once the first test file lands
+    // Keep until a default (non-acceptance) test exists. Acceptance must discover tests.
     passWithNoTests: true,
   },
 });

@@ -17,13 +17,14 @@ Hangori collects restaurant coupons and food-app deals in one place. When the us
 - A companion eats like one person:
   - no more than `maxMealsPer24h` counted meals (default 3) within any span shorter than 24 hours
   - counted meals at least `minHoursBetweenMeals` apart (default 3), measured by purchase time in either order
-- A receipt counts once. Resubmitting or re-photographing the same receipt is rejected as a duplicate. The fingerprint is: merchant name (lowercase, letters and digits only), purchase time to the minute, total in cents, and receipt ID (uppercase, letters and digits only) when present.
-- A receipt is rejected if it's dated more than 5 minutes in the future, if it's older than `maxReceiptAgeHours` (default 48), or if the merchant isn't a food business.
+- A receipt counts once. Resubmitting or re-photographing the same receipt is rejected as a duplicate. The fingerprint combines merchant name, purchase time to the minute, total in cents, and receipt ID when present. Normalize merchant names and receipt IDs with Unicode NFKD and strip diacritics. Lowercase the merchant name and keep only `a-z` and `0-9`. Uppercase the receipt ID and keep only `A-Z` and `0-9`.
+- A receipt is rejected if it's dated more than `maxFutureSkewMinutes` into the future, if it's older than `maxReceiptAgeHours` (default 48), or if the merchant isn't a food business. `maxFutureSkewMinutes` defaults to 5 and accepts any nonnegative value.
 - A receipt is sent to review, not counted, when there's no purchase time, the merchant category is unknown, or the extraction confidence is below `minExtractionConfidence` (default 0.8).
+- A null `merchantName` or `totalCents` also sends the receipt to review as `low_confidence`. Check these fields at the low-confidence step.
 - Check the rules in this order, and report the first one that fails: missing purchase time, low confidence, merchant category, future date, too old, duplicate, deal-only rule, too soon, daily limit.
 - `countOnlyDealMeals` defaults to false. When true, meals without a deal are rejected.
 - Savings are tracked and shown, but they never award XP.
-- Every rejection tells the user why in plain words, and when the next meal can count.
+- Every rejection tells the user why in plain words. For `too_soon` and `daily_limit`, set `nextEligibleAtMs` to the earliest time at or after evaluation when a new purchase could count given the ledger, applying both spacing and the rolling daily limit. Set it to null for every other outcome.
 
 ## Companions
 

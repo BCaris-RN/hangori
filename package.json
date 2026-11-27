@@ -9,6 +9,7 @@
     "lint": "eslint src e2e",
     "typecheck": "tsc --noEmit -p tsconfig.app.json && tsc --noEmit -p tsconfig.node.json",
     "test": "vitest run",
+    "test:acceptance": "vitest run tests/acceptance/ --passWithNoTests=false",
     "e2e": "playwright test",
     "verify": "npm run lint && npm run typecheck && npm run test"
   },

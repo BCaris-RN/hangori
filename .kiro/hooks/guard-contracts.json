@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Guard contracts",
+      "trigger": "PreToolUse",
+      "description": "Block edits to src/contracts/ and ask Brandon for an approved change request.",
+      "matcher": "^(fs_write|str_replace)$",
+      "action": {
+        "type": "command",
+        "command": "node -e \" const { readFileSync } = require('node:fs'); const { posix } = require('node:path'); const event = JSON.parse(readFileSync(0, 'utf8')); const input = event.tool_input ?? event.toolInput; const target = input?.path ?? input?.file_path ?? input?.filePath; if (typeof target === 'string') { const path = posix.normalize(target.replaceAll(String.fromCharCode(92), '/')); if (/(^|[/])src[/]contracts([/]|$)/i.test(path)) { console.error('BLOCKED: src/contracts/ is protected. Ask Brandon to approve a change request in docs/contracts/ before editing.'); process.exitCode = 2; } } \""
+      },
+      "timeout": 10
+    }
+  ]
+}
