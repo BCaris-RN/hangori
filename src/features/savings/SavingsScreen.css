@@ -1,0 +1,55 @@
+.savings-total {
+  text-align: center;
+  --edge-color: var(--green);
+  background: linear-gradient(to bottom, #1d3a22, var(--panel));
+}
+
+.savings-total__label {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.savings-total__amount {
+  font-size: 44px;
+  font-weight: bold;
+  color: var(--green);
+  text-shadow:
+    3px 3px 0 #0b3a12,
+    0 0 18px rgba(125, 255, 106, 0.55);
+}
+
+.savings-total__meta {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.savings-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.savings-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2px 12px;
+}
+
+.savings-row__shop {
+  font-weight: bold;
+}
+
+.savings-row__saved {
+  grid-row: span 2;
+  align-self: center;
+  color: var(--green);
+  font-weight: bold;
+}
+
+.savings-row__paid {
+  font-size: 12px;
+  color: var(--muted);
+}

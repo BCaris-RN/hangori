@@ -1,14 +1,193 @@
-.screen {
-  padding: 24px 16px;
+/* Egg picker */
+.picker {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.screen h1 {
-  font-size: 28px;
-  margin-bottom: 8px;
+.picker__grid,
+.den__grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
 }
 
-.screen p {
-  color: var(--color-muted);
-  font-size: 15px;
-  line-height: 1.5;
+.picker__grid li:first-child {
+  grid-column: span 2;
+}
+
+.egg-card {
+  appearance: none;
+  width: calc(100% - 6px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+  font: inherit;
+  color: inherit;
+  border: 0;
+  cursor: pointer;
+}
+
+.egg-card:hover {
+  background: var(--panel-2);
+}
+
+.egg-card__name {
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--orange-glow);
+}
+
+.egg-card__species {
+  font-size: 12px;
+  color: var(--green);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.egg-card__blurb {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.picker__demo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+/* Hatch scene */
+.hatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  --edge-color: var(--orange);
+}
+
+.hatch__stage {
+  padding: 8px;
+}
+
+.hatch__stage--shake .sprite {
+  animation: hatch-shake 0.28s steps(2, end) infinite;
+}
+
+.hatch__stage--burst {
+  animation: flash 0.3s steps(3, end) 1;
+}
+
+.hatch__stage--born .sprite {
+  animation: hatch-pop 0.5s steps(5, end) 1;
+}
+
+@keyframes hatch-shake {
+  0% {
+    transform: translateX(-4px) rotate(-7deg);
+  }
+  100% {
+    transform: translateX(4px) rotate(7deg);
+  }
+}
+
+@keyframes hatch-pop {
+  0% {
+    transform: scale(0.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.hatch__text {
+  font-weight: bold;
+  letter-spacing: 0.04em;
+}
+
+/* Companion home */
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.home__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  --edge-color: var(--orange);
+  background: linear-gradient(to bottom, var(--panel-2), var(--panel));
+}
+
+.home__card .xpbar {
+  width: 100%;
+}
+
+.home__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.home__name {
+  font-size: 19px;
+  color: var(--ink);
+}
+
+.home__level {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--green);
+  text-shadow: 0 0 10px rgba(125, 255, 106, 0.5);
+}
+
+.home__meta {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Den */
+.den__slot {
+  appearance: none;
+  width: calc(100% - 6px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font: inherit;
+  color: inherit;
+  text-align: center;
+  border: 0;
+  cursor: pointer;
+}
+
+.den__slot--active {
+  --edge-color: var(--orange);
+  background: var(--panel-2);
+}
+
+.den__slot--egg {
+  --edge-color: #33205c;
+  border-style: dashed;
+}
+
+.den__name {
+  font-weight: bold;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.den__stage {
+  font-size: 11px;
+  color: var(--muted);
 }
