@@ -1,6 +1,7 @@
 2026-11-22 · Run 0.2 · Steering · Kiro created product.md, tech.md, structure.md from the brief and rules; meal rules kept only in hangori-rules.md.
 2026-11-22 · Run 0.3 · Spike · tesseract.js on-device: 17/20 all fields, 274 ms per receipt. R014 tilt misread → add deskew in receipt-capture.
 2026-11-26 · Run 1.2 · Hook creation · Created six hooks: meal-rules-tests, verify-after-task, guard-contracts, guard-dependencies, journal, demo-walk.
+2026-11-26 · Run 1.3 · Spec + steering + hooks · Kiro wrote the demo-ready spec, then built evaluateMeal (58 of 58 test-first acceptance tests pass unchanged), an atomic ledger, companion stages, a seeded demo den, the spooky retro UI and the 60-second path; guard-dependencies blocked a package.json edit, so scripts were left alone.
 
 ---
 

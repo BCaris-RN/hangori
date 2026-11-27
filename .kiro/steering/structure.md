@@ -12,6 +12,8 @@ src/
   domain/
     meals/          Meal validation, XP calculation, duplicate detection, and the rule-check pipeline.
     companions/     Companion state, XP thresholds, evolution logic, and Halloween forms.
+  app/              App-level wiring that several features share: the profile provider over the
+                    ledger, the deals adapter, and the demo seed and sample receipts.
   features/
     <feature>/      One folder per product feature (deals, feed, receipt-scan, etc.).
                     Each feature owns its own components, hooks, and local state.
